@@ -6,7 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- BOOTSTRAP -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
+	<!-- FONT AWESOME -->
+	<script src="https://use.fontawesome.com/d2c9b2c5c1.js"></script>
 	<!-- TIPOGRAFIA -->
 	<!-- ingrese tipografia -->
 	
@@ -16,7 +17,28 @@
 <body>
 	
 	<!-- INGRESE SU BELLO CODIGO -->
-
+	<div id="ingrese-celular" class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="ingrese-celular-cont">
+					<img src="assets/img/icons/phone.png">
+					<h2>Para comenzar validemos tu número</h2>
+					<p>Recibirás un SMS con un código de validación</p>
+				</div>
+				<form class="form-ingrese-celular-validacion">
+				  <div class="form-group" id="from-ingrese-celular">
+				    <input type="number" class="form-control" id="ingrese-celular-num">
+				  </div>
+				  <div class="checkbox checkbox-primary">
+                        <input id="ingrese-celular-checkbox" type="checkbox">
+                        <label for="ingrese-celular-checkbox">
+                            Acepto los <span>Términos y condiciones.</span></label>
+                  </div>
+				  <button type="submit" class="btn" id="ingrese-celular-btn">Continuar</button>
+				</form>
+			</div>
+		</div>
+	</div>
 
 
 	<!-- JQUERY -->
@@ -24,6 +46,6 @@
 	<!-- BOOTSTRAP -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<!-- JS -->
-	<script src="js/main.js"></script>
+	<script src="assets/js/main.js"></script>
 </body>
 </html>
