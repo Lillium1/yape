@@ -1,0 +1,21 @@
+/*Pantalla 5*/
+.m_fondo{
+	background-color: #fbd43b;
+	height: 100vh;
+}
+.m_img{
+	width: 50%;
+	padding-top: 150px;
+	display: block;
+    margin: 0 auto;
+}
+.m_pes{
+	color: #38052a;
+	font-size: 20px;
+	padding-top: 30px;
+	font-weight: bold;
+}
+.m_p{
+	margin-bottom: -1px;
+}
+/*Fin pantalla 5*/
