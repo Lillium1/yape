@@ -1,0 +1,21 @@
+@mixin contenedor-basico (){
+	padding-top: 30%;
+	img{
+		width: 40%;
+	}
+	h2{
+		font-size: 21px;
+		padding: 15px;
+		color: $gris-dark;
+	}
+	p, label{
+		color: $gis-letra-soft;
+		font-size: 14px;
+	}
+	span{
+  		color: $turquesa;
+  	}
+  	form{
+    	margin-top: 20%;
+  	}
+}
