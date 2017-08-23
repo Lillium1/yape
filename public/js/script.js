@@ -12685,8 +12685,8 @@ $(document).ready(function() {
 
 });	
 $(document).ready(function() {
-	
-	/*var counter = 0;
+	//Contador anterior lo hace 1 vez
+	/*var counter = 0; 
 	var tt=setInterval(function(){startTime()},2100);
 
 	function startTime()
@@ -12789,6 +12789,10 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
+	/*Loading pantalla yape*/
+	setTimeout(function(){ 
+	    	$('.pantalla-loading').remove();
+		},1000)
 
-	
 });
+
