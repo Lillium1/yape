@@ -12681,5 +12681,63 @@ $(document).ready(function(){
 	});
 });
 
+$(document).ready(function(){
 
+	var contador = 3;
+	/*----------* NOMBRE *----------*/
+	$("#ingrese-datos-nombre").blur(function() {
+		// ingrese solo numeros
+		if (!(/[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,30}/.test($("#ingrese-datos-nombre").val()))) {
+			$("#nombreError").remove();
+			$(this).css("border-color", "#f64552");
+			$("#form-ingrese-datos").append("<span id='nombreError'>* Ingrese nombre válido</span>");
+			$(this).val("");
+			
+		}
+		else {
+			$(this).css("border-color", "#00c3a3");
+			$("#nombreError").remove();
+			contador -= 1;
+			console.log(contador)
+
+		}
+	});
+
+	/*----------* CORREO *----------*/
+	$("#ingrese-datos-correo").blur(function() {
+		// ingrese solo numeros
+		if (!(/^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$/.test($("#ingrese-datos-correo").val()))) {
+			$("#correoError").remove();
+			$(this).css("border-color", "#f64552");
+			$("#form-ingrese-datos").append("<span id='correoError'>* Ingrese correo válido</span>");
+			$(this).val("");
+		}
+		else {
+			$(this).css("border-color", "#00c3a3");
+			$("#contraseñaError").remove();
+			contador -= 1;
+			console.log(contador)
+		}
+	});
+
+	/*----------* CONTRASEÑA *----------*/
+	$("#ingrese-datos-contraseña").blur(function() {
+		// ingrese solo numeros
+		if (!(/^[A-Za-z0-9]{6}$/.test($("#ingrese-datos-contraseña").val()))) {
+			$("#contraseñaError").remove();
+			$(this).css("border-color", "#f64552");
+			$("#form-ingrese-datos").append("<span id='contraseñaError'>* Ingrese contraseña de 6 digitos</span>");
+			$(this).val("");
+		}
+		else {
+			$(this).css("border-color", "#00c3a3");
+			$("#contraseñaError").remove();
+			contador -= 1;
+			console.log(contador)
+		}
+	});
+
+	$('button[type="submit"]').attr('disabled','disabled');
+	console.log(contador)
+});
 
