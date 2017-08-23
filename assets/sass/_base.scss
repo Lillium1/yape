@@ -84,3 +84,13 @@
   }
 }
 
+/*alert-info (Mensaje con codigo)*/
+.alert-info{
+  position: absolute;
+  top: 35%;
+  width: 250px;
+  left: 25%;
+}
+#errorCodigo{
+  color: $turquesa;
+}

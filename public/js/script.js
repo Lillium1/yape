@@ -12631,7 +12631,9 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 
-$(document).ready(function(){
+$(document).ready(function() {
+	
+
 	// error variables
 	var numberPhoneError = true;
 
@@ -12678,36 +12680,104 @@ $(document).ready(function(){
 		 	$("#ingrese-celular-num").blur();
 		}
 	});*/
-	(function validarCodigo(){
-	    $('.mensaje').last().append('<div class="alert alert-info"><a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>' +
-						  '<strong>Código de validación: </strong>' + localStorage.codigo +
-							'</div>');
-				
-			$("#ingrese-codigo").click(function(){
-				if ($('#codigo').val() == localStorage.codigo) {
-					alert("pasa");
-				}else{
-					alert("codigo no valido")
-				}
-			})
-	})()
 
-	function registrarNumero(){
+
+
+});	
+$(document).ready(function() {
+	
+	/*var counter = 0;
+	var tt=setInterval(function(){startTime()},2100);
+
+	function startTime()
+	{
+	    if(counter == 21) {
+	        clearInterval(tt);
+	         console.log(counter);
+	    	$.ajax({
+				url: '/api/resendCode',
+				type: 'POST',
+				data: {'phone' : localStorage.phone},
+			})
+			.done(function(res) {
+				console.log("success");
+				localStorage.codigo = res.data;
+				$("#codigoUser").text(localStorage.codigo);
+			})
+			.fail(function(res) {
+				console.log("error");
+				console.log(res);
+			})  
+	    } else {
+	        counter++;
+	    }
+	    
+
+	}*/
+	function startTimer(duration, display) {
+	    var timer = duration, minutes, seconds;
+	    setInterval(function () {
+	        
+	        seconds = parseInt(timer % 60, 10);     
+	        seconds = seconds < 20 ?  seconds : seconds;
+
+	        display.text(seconds);
+
+	        if (--timer < 0) {
+	            timer = duration;
+	            $.ajax({
+					url: '/api/resendCode',
+					type: 'POST',
+					data: {'phone' : localStorage.phone},
+				})
+				.done(function(res) {
+					console.log("success");
+					localStorage.codigo = res.data;
+					$("#codigoUser").text(localStorage.codigo);
+				})
+				.fail(function(res) {
+					console.log("error");
+					console.log(res);
+				})  
+	        }
+	    }, 1000);
+	}
+
+	jQuery(function ($) {
+	    var fiveMinutes = 21,
+	        display = $('#time');
+	    startTimer(fiveMinutes, display);
+	});
+
+	$('.m_cajainput').append('<div class="alert alert-info"><a id="codigo" href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>' +
+							  '<strong>Código de validación: </strong><p id="codigoUser">' + localStorage.codigo +
+								'</p></div>');
+	function registrarNumero(num){
 			$.ajax({
 				url: '/api/registerNumber',
 				type: 'POST',
-				data: {'terms' : 'true', 'phone' : localStorage.phone},
+				data: {'terms' : 'true', 'phone' : num},
 			})
 			.done(function(res) {
 				console.log("success");
 				localStorage.codigo = res.data.code;
+				//startTime();
 			})
 			.fail(function(res) {
 				console.log("error");
 				console.log(res);
 			})
 	}
-
+	$("#m_inputt").blur(function(){
+		if ($('#m_inputt').val() == localStorage.codigo) {
+			event.preventDefault(); // prevent sending 
+			window.location.href = "ingreseDatos_04.html";
+		}else{
+			$("#errorCodigo").remove();
+			$(".m_cajainput").append("<span id='errorCodigo'>* Debe ingresar codigo válido</span>");
+		}
+	})
+	
 	$('#ingrese-celular-btn').click(function(){
 		event.preventDefault(); // prevent sending 
 		localStorage.phone = $("#ingrese-celular-num").val();
@@ -12715,9 +12785,8 @@ $(document).ready(function(){
 		window.location.href = "ingreseCodigo_03.html";
 	})
 
+
 });
-
-
 
 $(document).ready(function() {
 
