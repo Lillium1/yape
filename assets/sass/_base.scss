@@ -84,3 +84,23 @@
   }
 }
 
+/*alert-info (Mensaje con codigo)*/
+.alert-info{
+  position: absolute;
+  top: 35%;
+  width: 250px;
+  left: 25%;
+}
+#errorCodigo{
+  color: $turquesa;
+}
+
+/*Pantalla loading Index.html*/
+.pantalla-loading{
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+}
