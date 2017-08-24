@@ -11,11 +11,30 @@
 	<!-- ingrese tipografia -->
 	
 	<!-- CSS -->
-	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/style.min.css">
 </head>
 <body>
 	
 	<!-- INGRESE SU BELLO CODIGO -->
+
+		<div class="row">
+			<div class="col-md-12">
+			<a href="index.html" class="m_a"><</a>
+				<img src="../public/img/icons/message.png" class="img-responsive m_imgcodigo">
+				<div class="text-center">
+					<h3><b>Ahora ingresa tu código</b></h3>
+					<h5 class="m_gray m_cajaenviar">Enviamos un SMS con el código de validación al número <span class="m_numero"></span></h5>
+				</div>
+			</div>
+			<div class="col-md-12 m_cajainput">
+				<img src="../public/img/icons/lock.png" class="m_iconlock"><input id="m_inputt" class="m_required" type="password" name="pass" placeholder="- - - - -">
+			</div>
+			<span class="m_gray">Reintentar en </span><img src="../public/img/icons/clock.png" class="m_iconlock"><span class="m_gray">21</span> <!--aqui para el 21 hay q poner otra clase o ID para que cambie el valor -->
+			<div>
+				<a class="btn" id="m_crearusuario" href="ingreseDatos_04.html">CREAR USUARIO</a>
+			</div>
+		</div>
+	
 
 
 
@@ -24,6 +43,6 @@
 	<!-- BOOTSTRAP -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<!-- JS -->
-	<script src="js/main.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>

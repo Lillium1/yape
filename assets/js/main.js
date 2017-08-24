@@ -1,3 +1,6 @@
+
+
+
 $(document).ready(function() {
 	/*Loading pantalla yape*/
 	setTimeout(function(){ 
@@ -5,3 +8,4 @@ $(document).ready(function() {
 		},1000)
 
 });
+

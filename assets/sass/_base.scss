@@ -84,6 +84,150 @@
   }
 }
 
+
+/*Pantalla 5*/
+.m_fondo{
+  background-color: #fbd43b;
+  height: 100vh;
+  .m_img{
+  width: 50%;
+  padding-top: 150px;
+  display: block;
+  margin: 0 auto;
+  }
+  .m_pes{
+    color: #38052a;
+    font-size: 20px;
+    padding-top: 30px;
+    font-weight: bold;
+    .m_p{
+    margin-bottom: -1px;
+    }
+  }
+}
+
+/*Fin pantalla 5*/
+
+/* Pantalla 6*/
+.m_a{
+  color: #000;
+  margin-left: -350px;
+}
+.m_imgcodigo{
+  padding-top: 100px;
+  width: 30%;
+}
+.m_cajaenviar{
+  margin: 15px 50px;
+}
+.m_gray{
+  color: #9d9d9d;
+}
+.m_cajainput{
+  border-bottom: 1px solid #9d9d9d;
+  width: 80%;
+  margin-bottom: 10px;
+  input{
+    border: none;
+  }
+  input[type=number]::-webkit-inner-spin-button, 
+  input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+}
+.m_iconlock{
+  width: 5%;
+}
+/*fin*/
+
+
+/*Pantalla 7*/
+.sietefondo{
+  background-color: $morado-light;
+  padding-bottom: 10px;
+  h4{
+    color: white;
+    margin-bottom: -1px;
+    font-weight: bold;
+  }
+  .m_mostrar{
+    color: $turquesa;
+  }
+  .m_imgpeke{
+    width: 5%;
+  }
+  .m_imgcara{
+    padding-top: 50px;
+    width: 30%;
+  }
+  .m_engine{
+    width: 6%;
+    margin-left: 320px;
+    padding-top: 15px;
+  }
+}
+.sietefondodos{
+  background-color: $morado-dark;
+  padding-top: 10px;
+  .m_underline{
+    border-bottom: 1px solid #696969;
+    padding-bottom: 6px;
+  }
+  .m_imgpeke{
+    width: 7%;
+    margin-left: 100px;
+  }
+  .m_heigh{
+    height: 60vh;
+    padding-top: 20px;
+  }
+}
+.m_bottom{
+  padding-top: 180px;
+  .m_icon{
+  width: 50%;
+  
+}
+}
+.m_white{
+  color: white;
+}
+.m_top{
+  padding-top: 40px;
+}
+/*fin*/
+
+/*Ingrese tarjeta*/
+#body-index1 {
+    margin: 0 auto;
+    padding: 50px;
+}
+.carousel {
+    height: 300px;
+}
+.carousel-indicators .active {
+    background-color: red;
+}
+.carousel-indicators {
+    top: 350px;
+}
+.btn-registro {
+    margin-top: 100px;
+}
+.vence {
+    width: 45px;
+    font-size: 11px;
+    display: inline-block;
+    border: none;
+    border-bottom: #555 solid 1px;
+    padding: 0;
+}
+.reg-vence {
+    margin-top: 20px;
+
 /*alert-info (Mensaje con codigo)*/
 .alert-info{
   position: absolute;
@@ -103,4 +247,5 @@
   top: 0;
   left: 0;
   z-index: 99999;
+
 }

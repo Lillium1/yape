@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yape</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- TIPOGRAFIA -->
+    <!-- ingrese tipografia -->
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="body-index1">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12">
+            <div class="center-block">
+                <img src="../public/img/icons/bcp-logo.png" alt="Logo Banco">
+                <div class="text-center">
+                    <h4>Registra tu tarjeta crédito BPC</h4>
+                    <h5>Por ahora sólo aceptamos cuentas de ahorro y/o corriente en pesos.</h5>
+                    <span><i class="fa fa-credit-card" aria-hidden="true"></i><input type="number" class="form-control" oninput="this.value=this.value.slice(0,this.maxLength)" maxlength="16" id="digitos16" placeholder="Número de tarjeta"></span>
+                    <div class="scan">
+                      <img src="../public/img/icons/scan.png">
+                        <p>Escanear tarjeta</p>
+                    </div>
+                    <div class="fecha">
+                        <span><p>Fecha de vencimiento</p></span>
+                        <span class="form-group">
+                                    <label for="sel1">Mes</label>
+                                        <select class="form-control vence" id="sel1">
+                                          <option>1</option>
+                                          <option>2</option>
+                                          <option>3</option>
+                                          <option>4</option>
+                                          <option>5</option>
+                                          <option>6</option>
+                                          <option>7</option>
+                                          <option>8</option>
+                                          <option>9</option>
+                                          <option>10</option>
+                                          <option>11</option>
+                                          <option>12</option>
+                                        </select>
+                            </span>/<span class="form-group">
+                                    <label for="sel1">Año</label>
+                                        <select class="form-control vence" id="sel1">
+                                          <option>17</option>
+                                          <option>18</option>
+                                          <option>19</option>
+                                          <option>20</option>
+                                          <option>21</option>
+                                          <option>22</option>
+                                          <option>23</option>
+                                          <option>24</option>
+                                        </select>
+                            </span>
+                        <div><input class="btn btn-default disabled reg-vence" type="submit" value="CONTINUAR"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- JQUERY -->
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <!-- BOOTSTRAP -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <!-- JS -->
+        <script src="main.js"></script>
+</body>
+</html>
