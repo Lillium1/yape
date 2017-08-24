@@ -4,24 +4,33 @@
 	<meta charset="UTF-8">
 	<title>Yape</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+
 	<!-- BOOTSTRAP -->
     <link rel="stylesheet" type="text/css" href="css/style.min.css">
 </head>
 <body>
-	
-	<div class="form-group">
-	  <label for="usr">Name:</label>
-	  <input type="text" class="form-control" id="usr">
+	<div id="ingrese-datos" class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="ingrese-datos-cont">
+					<img src="../public/img/icons/lockone.png">
+					<h2>Crea tu usuario Yape</h2>
+					<p>Ingresa un nombre, email y contraseña de usuario</p>
+				</div>
+				<form class="form-ingrese-datos-validacion" id="form">
+					<div class="form-group" id="form-ingrese-datos">
+						<input type="text" class="form-control" id="ingrese-datos-nombre" placeholder="Nombre">
+						<input type="email" class="form-control" id="ingrese-datos-correo" placeholder="correo@ejemplo.com">
+						<input type="password" class="form-control" id="ingrese-datos-contraseña" placeholder="Ingresa clave de 6 digitos">
+						<span>Cuida ésta clave como oro, es tu acceso a Yape.</span>
+					</div>
+					<button type="submit" class="btn" id="ingrese-datos-btn">Continuar</button>
+				</form>
+			</div>
+		</div>
 	</div>
-	<div class="form-group">
-	  <label for="pwd">Email:</label>
-	  <input type="email" class="form-control" id="email">
-	</div>
-	<div class="form-group">
-	  <label for="pwd">Password:</label>
-	  <input type="password" class="form-control" id="pass">
-	</div>
-	<button type="button" class="btn" id="btn-registro-user">Basic</button>
+
+
 	<script src="https://use.fontawesome.com/4154d90246.js" ></script>
 	<script type="text/javascript" src="js/script.js"></script>
 </body>
