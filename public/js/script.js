@@ -12685,35 +12685,7 @@ $(document).ready(function() {
 
 });	
 $(document).ready(function() {
-	//Contador anterior lo hace 1 vez
-	/*var counter = 0; 
-	var tt=setInterval(function(){startTime()},2100);
-
-	function startTime()
-	{
-	    if(counter == 21) {
-	        clearInterval(tt);
-	         console.log(counter);
-	    	$.ajax({
-				url: '/api/resendCode',
-				type: 'POST',
-				data: {'phone' : localStorage.phone},
-			})
-			.done(function(res) {
-				console.log("success");
-				localStorage.codigo = res.data;
-				$("#codigoUser").text(localStorage.codigo);
-			})
-			.fail(function(res) {
-				console.log("error");
-				console.log(res);
-			})  
-	    } else {
-	        counter++;
-	    }
-	    
-
-	}*/
+	//Timer 21seg reenviar codigo
 	function startTimer(duration, display) {
 	    var timer = duration, minutes, seconds;
 	    setInterval(function () {
@@ -12742,16 +12714,33 @@ $(document).ready(function() {
 	        }
 	    }, 1000);
 	}
-
+	//Timer 21seg cambia seg en el span del html
 	jQuery(function ($) {
 	    var fiveMinutes = 21,
 	        display = $('#time');
 	    startTimer(fiveMinutes, display);
 	});
 
-	$('.m_cajainput').append('<div class="alert alert-info"><a id="codigo" href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>' +
-							  '<strong>Código de validación: </strong><p id="codigoUser">' + localStorage.codigo +
-								'</p></div>');
+	//funcion que impre codigo y lo valida
+	(function validarCamposCodigo(){
+			//Imprime el codigo en un alert
+			$('.m_cajainput').append('<div class="alert alert-info"><a id="codigo" href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>' +
+								  '<strong>Código de validación: </strong><p id="codigoUser">' + localStorage.codigo +
+									'</p></div>');
+				//Validar campos del codigo
+			$("#m_inputt").blur(function(){
+				if ($('#m_inputt').val() == localStorage.codigo) {
+					event.preventDefault(); // prevent sending 
+					window.location.href = "ingreseDatos_04.html";
+				}else{
+					$("#errorCodigo").remove();
+					$(".m_cajainput").append("<span id='errorCodigo'>* Debe ingresar codigo válido</span>");
+				}
+			})
+	})();
+	
+
+	//Funcion registrar Numero Api
 	function registrarNumero(num){
 			$.ajax({
 				url: '/api/registerNumber',
@@ -12768,21 +12757,66 @@ $(document).ready(function() {
 				console.log(res);
 			})
 	}
-	$("#m_inputt").blur(function(){
-		if ($('#m_inputt').val() == localStorage.codigo) {
-			event.preventDefault(); // prevent sending 
-			window.location.href = "ingreseDatos_04.html";
-		}else{
-			$("#errorCodigo").remove();
-			$(".m_cajainput").append("<span id='errorCodigo'>* Debe ingresar codigo válido</span>");
-		}
-	})
+
+	//Funcion registrar Usuario Api
+	function registrarUsuario(num, name, email, pass){
+			$.ajax({
+				url: '/api/createUser',
+				type: 'POST',
+				data: {'phone' : num, 'name' : name, 'email' : email, 'password' : pass},
+			})
+			.done(function(res) {
+				console.log("success");
+				console.log(res);
+			})
+			.fail(function(res) {
+				console.log("error");
+				console.log(res);
+			})
+	}
+
+	//Funcion registrar Tarjeta
+	function registrarTarjeta(num, tarjetaNumero, tarjetaMes, tarjetaYear, tarjetaPass){
+			$.ajax({
+				url: '/api/registerCard',
+				type: 'POST',
+				data: {'phone' : num, 'cardNumber' : tarjetaNumero, 'cardMonth' : tarjetaMes, 'cardYear' : tarjetaYear, 'cardPassword' : tarjetaPass},
+			})
+			.done(function(res) {
+				console.log("success");
+				console.log(res);
+			})
+			.fail(function(res) {
+				console.log("error");
+				console.log(res);
+			})
+	}
 	
+	//boton guarda numero
 	$('#ingrese-celular-btn').click(function(){
 		event.preventDefault(); // prevent sending 
 		localStorage.phone = $("#ingrese-celular-num").val();
 		registrarNumero(localStorage.phone);
 		window.location.href = "ingreseCodigo_03.html";
+	})
+
+	//boton guarda datos usuario
+	$('#btn-registro-user').click(function(){
+		event.preventDefault(); // prevent sending 
+		localStorage.name = $("#usr").val();
+		localStorage.email = $("#email").val();
+		localStorage.pass = $("#pass").val();
+		registrarUsuario(localStorage.phone, localStorage.name, localStorage.email, localStorage.pass);
+		window.location.href = "registreTarjeta_05.html";
+	})
+
+	//boton guarda datos tarjeta
+	$('#btn-registro-tarjeta').click(function(){
+		localStorage.tarjetaNumero = $("#tarjeta").val();
+		localStorage.tarjetaMes = $("#tarjeta-mes").val();
+		localStorage.tarjetaYear = $("#tarjeta-year").val();
+		localStorage.tarjetaPass = $("#tarjeta-pass").val();
+		registrarTarjeta(localStorage.phone, localStorage.tarjetaNumero, localStorage.tarjetaMes, localStorage.tarjetaYear, localStorage.tarjetaPass);
 	})
 
 
