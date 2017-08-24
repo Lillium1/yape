@@ -197,8 +197,33 @@
 .m_top{
   padding-top: 40px;
 }
-
-
-
-
 /*fin*/
+
+/*Ingrese tarjeta*/
+#body-index1 {
+    margin: 0 auto;
+    padding: 50px;
+}
+.carousel {
+    height: 300px;
+}
+.carousel-indicators .active {
+    background-color: red;
+}
+.carousel-indicators {
+    top: 350px;
+}
+.btn-registro {
+    margin-top: 100px;
+}
+.vence {
+    width: 45px;
+    font-size: 11px;
+    display: inline-block;
+    border: none;
+    border-bottom: #555 solid 1px;
+    padding: 0;
+}
+.reg-vence {
+    margin-top: 20px;
+}

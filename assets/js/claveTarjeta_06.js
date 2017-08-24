@@ -1,0 +1,1 @@
+str = str.replace(/\d(?=\d{4})/g, "*");
